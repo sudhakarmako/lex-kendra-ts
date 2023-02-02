@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  ChatBubble,
+  ChatContainer,
+  ChatForm,
+  ChatHeader,
+  ChatMessages,
+  Container,
+} from "@components";
+import dayjs from "dayjs";
+import { useState } from "react";
 
-function App() {
+const App: React.FC = () => {
+  const [message, setMessage] = useState<string>("");
+  const handleSubmit = () => {
+    return null;
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <ChatContainer>
+        <ChatHeader>
+          <h3>Lex Kendra Chat Bot</h3>
+        </ChatHeader>
+        <ChatMessages>
+          <ChatBubble
+            message={"some message"}
+            date={dayjs().toISOString()}
+            by="lex"
+          />
+        </ChatMessages>
+        <ChatForm
+          text={message}
+          setText={setMessage}
+          onSubmit={() => handleSubmit()}
+        />
+      </ChatContainer>
+    </Container>
   );
-}
+};
 
 export default App;

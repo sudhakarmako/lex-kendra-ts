@@ -1,0 +1,8 @@
+@import "../../styles/theme.scss";
+.chat_messages {
+  height: calc(70vh - 60px);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 60px;
+  padding-top: 1rem;
+}

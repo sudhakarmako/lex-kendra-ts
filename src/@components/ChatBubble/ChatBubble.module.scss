@@ -1,0 +1,40 @@
+@import "../../styles/theme.scss";
+.chat_bubble {
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  max-width: 70%;
+  margin: 0.1rem;
+  border-radius: 2rem;
+  position: relative;
+  p {
+    margin: 0;
+  }
+  &.chat_left {
+    background-color: $primary;
+    border-bottom-left-radius: 2px;
+    color: white;
+  }
+  &.chat_right {
+    background-color: $lightgray;
+    border-bottom-right-radius: 2px;
+    margin-left: auto;
+  }
+  &.chat_bubble {
+    sub {
+      position: absolute;
+      color: $muted;
+      bottom: 3px;
+      font-size: 0.5rem;
+    }
+  }
+  &.chat_left {
+    sub {
+      right: -40px;
+    }
+  }
+  &.chat_right {
+    sub {
+      left: -40px;
+    }
+  }
+}
