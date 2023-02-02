@@ -78,11 +78,14 @@ const App: React.FC = () => {
           <h3>Lex Kendra Chat Bot</h3>
         </ChatHeader>
         <ChatMessages ref={element}>
-          <ChatBubble
-            message={"some message"}
-            date={dayjs().toISOString()}
-            by="lex"
-          />
+          {!!conversation?.length &&
+            conversation.map(({ message, date, by }, idx) => (
+              <ChatBubble
+                message={message}
+                date={dayjs(date).format("HH:mm a")}
+                by={by}
+              />
+            ))}
         </ChatMessages>
         <ChatForm
           text={message}

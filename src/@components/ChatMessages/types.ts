@@ -1,4 +1,4 @@
 export type ChatMessagesType = {
-  children: JSX.Element;
+  children: React.ReactNode;
   ref: any;
 };
