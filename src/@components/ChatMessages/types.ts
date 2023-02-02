@@ -1,1 +1,4 @@
-export type ChatMessagesType = { children: JSX.Element };
+export type ChatMessagesType = {
+  children: JSX.Element;
+  ref: any;
+};
